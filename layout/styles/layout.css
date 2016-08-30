@@ -134,6 +134,8 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #footer a{color:#99CC00; background-color:#1B1B1B;}
 #footer h2{margin:0 0 15px 0; padding:0 0 8px 0; font-size:22px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif; color:#CCCCCC; background-color:#1B1B1B; line-height:normal; border-bottom:1px dashed #CCCCCC;}
 #contactform{display:inline-block; float:left; width:350px; padding:10% 0 0 40% }
+#regRedirectLink {text-decoration: none; color:white;}
+#regRedirectLink a:visited {color:white;}
 
 /* Company Details */
 

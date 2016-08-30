@@ -11,6 +11,14 @@ Licence URI: http://www.os-templates.com/template-terms
 	<title>El Projecto</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
+	<script src="../libs/mustache.js"></script>
+	<script src="../libs/moment.js"></script>
+	<script src="../libs/jquery.min.js"></script>
+	<script src="../libs/jquery.noty.minified.js"></script>
+	<script src="../libs/sammy.js"></script>
+	<script src="../libs/framework.js"></script>
+	<script src="../scripts/script.js"></script>
+
 </head>
 <body id="top">
 <div class="wrapper col1">
@@ -38,8 +46,8 @@ Licence URI: http://www.os-templates.com/template-terms
 			<li class="last"><a href="#">About</a></li>
 			<li><a href="#">Gallery</a>
 				<ul>
-                    <li><a href="pages/albums.html">Albums</a></li>
-                    <li><a href="pages/images.html">Images</a></li>
+                    <li><a href="albums.html">Albums</a></li>
+                    <li><a href="images.html">Images</a></li>
 				</ul>
 			</li>
 
@@ -54,17 +62,17 @@ Licence URI: http://www.os-templates.com/template-terms
 			<fieldset>
 				<legend>Contact Form</legend>
 				<label for="username">User Name:
-					<input id="username" name="username" type="text" value="" />
+					<input id="username" type="text" value="" />
 				</label>
 				<label for="password" class="margin">Password:
-					<input id="password" name="emailaddress" type="text" value="" />
+					<input id="password"  type="text" value="" />
 				</label>
-				<label for="REpassword" class="margin">Repeat Password:
-					<input id="REpassword" name="emailaddress" type="text" value="" />
+				<label for="confirmPassword" class="margin">Repeat Password:
+					<input id="confirmPassword" type="text" value="" />
 				</label>
 
 				<p>
-					<input id="submitform" name="submitform" type="submit" value="Register" />
+					<input id="registerButton" type="button" value="Register" />
 					&nbsp;
 
 				</p>
@@ -72,6 +80,5 @@ Licence URI: http://www.os-templates.com/template-terms
 		</form>
 	</div>
 </div>
-
 </body>
 </html>

@@ -104,7 +104,7 @@ function showPopup(type, text, position) {
     function _showSuccessPopup(text, position) {
         noty({
             text: text,
-            timeout: 2000,
+            timeout: 4000,
             layout: 'top',
             type: 'success'
         });
@@ -113,7 +113,7 @@ function showPopup(type, text, position) {
     function _showInfoPopup(text, position) {
         noty({
             text: text,
-            timeout: 2000,
+            timeout: 4000,
             layout: 'top',
             type: 'information'
         });
@@ -122,7 +122,7 @@ function showPopup(type, text, position) {
     function _showWarningPopup(text, position) {
         noty({
             text: text,
-            timeout: 2000,
+            timeout: 4000,
             layout: 'top',
             type: 'warning'
         });
@@ -131,7 +131,7 @@ function showPopup(type, text, position) {
     function _showErrorPopup(text, position) {
         noty({
             text: text,
-            timeout: 2000,
+            timeout: 4000,
             layout: 'top',
             type: 'error'
         });
