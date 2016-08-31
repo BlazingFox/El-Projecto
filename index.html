@@ -11,6 +11,15 @@ Licence URI: http://www.os-templates.com/template-terms
 <title>El Projecto</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+  <script src="libs/mustache.js"></script>
+  <script src="libs/moment.js"></script>
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/jquery.noty.minified.js"></script>
+  <script src="libs/sammy.js"></script>
+  <script src="libs/framework.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="https://code.ospry.io/v1/ospry.js"></script>
+  <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.0.3.min.js"></script>
 </head>
 <body id="top">
 <div class="wrapper col1">
@@ -33,9 +42,8 @@ Licence URI: http://www.os-templates.com/template-terms
       <p>Free Website Template</p>
     </div>
     <ul id="topnav">
-      <li><a href="pages/login.html">Log In</a></li>
-      <li><a href="pages/register.html">Register</a></li>
-      <li class="last"><a href="#">About</a></li>
+      <li id="loginNav" ><a href="pages/login.html">Log In</a></li>
+      <li id="registerNav"><a  href="pages/register.html">Register</a></li>
       <li><a href="#">Gallery</a>
         <ul>
           <li><a href="pages/albums.html">Albums</a></li>
