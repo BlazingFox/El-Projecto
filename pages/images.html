@@ -10,7 +10,16 @@ Licence URI: http://www.os-templates.com/template-terms
 <head>
     <title>PhotoBusiness</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <link rel="stylesheet" href="layout/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="../layout/styles/layout.css" type="text/css" />
+    <script src="../libs/mustache.js"></script>
+    <script src="../libs/moment.js"></script>
+    <script src="../libs/jquery.min.js"></script>
+    <script src="../libs/jquery.noty.minified.js"></script>
+    <script src="../libs/sammy.js"></script>
+    <script src="../libs/framework.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="https://code.ospry.io/v1/ospry.js"></script>
+    <script src="https://da189i1jfloii.cloudfront.net/js/kinvey-html5-sdk-3.0.3.min.js"></script>
 </head>
 <body id="top">
 <div class="wrapper col1">
@@ -33,31 +42,29 @@ Licence URI: http://www.os-templates.com/template-terms
             <p>Free Website Template</p>
         </div>
         <ul id="topnav">
-            <li><a href="pages/login.html">Log In</a></li>
-            <li><a href="pages/register.html">Register</a></li>
-            <li class="last"><a href="#">About</a></li>
-            <li><a href="#">Gallery</a>
-                <ul>
-                    <li><a href="pages/albums.html">Albums</a></li>
-                    <li><a href="pages/images.html">Images</a></li>
-                </ul>
-            </li>
-
-            <li class="active"><a href="index.html">Home</a></li>
+            <li id="loginNav"   ><a href="login.html">Log In</a></li>
+            <li id="registerNav"><a href="register.html">Register</a></li>
+            <li id="galleryNav"><a  href="images.html">Gallery</a></li>
+            <li class="active"><a href="../index.html">Home</a></li>
         </ul>
         <br class="clear" />
     </div>
 </div>
 <div class="wrapper col3">
     <div id="gallery">
-        <ul>
-            <li class="placeholder" style="background-image:url('layout/images/gallery-placeholder.gif');">Image Holder</li>
-            <li><a class="swap" href="#"><img src="images/gallery/1_s.gif" alt="" /><span><img src="images/gallery/1.gif" width="950" height="370" alt="" /></span></a></li>
-            <li><a class="swap" href="#"><img src="images/gallery/2_s.gif" alt="" /><span><img src="images/gallery/2.gif" width="950" height="370" alt="" /></span></a></li>
-            <li><a class="swap" href="#"><img src="images/gallery/3_s.gif" alt="" /><span><img src="images/gallery/3.gif" width="950" height="370" alt="" /></span></a></li>
-            <li><a class="swap" href="#"><img src="images/gallery/4_s.gif" alt="" /><span><img src="images/gallery/4.gif" width="950" height="370" alt="" /></span></a></li>
-            <li class="last"><a class="swap" href="#"><img src="images/gallery/5_s.gif" alt="" /><span><img src="images/gallery/5.gif" width="950" height="370" alt="" /></span></a></li>
+        <ul id="imgList">
+            <li id="one"  ><a class="swap" href="#"><img  class="one"   src="" alt="" /></a></li>
+            <li id="two"  ><a class="swap" href="#"><img  class="two"    src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"  class="two"   src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="three"><a class="swap" href="#"><img  class="three" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"   class="three"  src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="four" ><a class="swap" href="#"><img  class="four"   src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"  class="four"  src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="five" class="last"><a class="swap" href="#"><img class="five" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="five" src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="six"  ><a class="swap" href="#"><img  class="six"  src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"   class="six"   src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="seven"><a class="swap" href="#"><img  class="seven"  src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="seven" src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="eight"><a class="swap" href="#"><img  class="eight" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"  class="eight" src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="nine" ><a class="swap" href="#"><img  class="nine"  src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;"  class="nine"   src="" width="950" height="370" alt="" /></span></a></li>
+            <li id="ten" class="last"><a class="swap" href="#"><img class="ten" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="ten" src="" width="950" height="370" alt="" /></span></a></li>
         </ul>
+        <button id="loadButton">Load 5 more</button>
     </div>
 </div>
 

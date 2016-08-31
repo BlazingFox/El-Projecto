@@ -44,11 +44,12 @@ Licence URI: http://www.os-templates.com/template-terms
     <ul id="topnav">
       <li id="loginNav" ><a href="pages/login.html">Log In</a></li>
       <li id="registerNav"><a  href="pages/register.html">Register</a></li>
-      <li><a href="#">Gallery</a>
-        <ul>
-          <li><a href="pages/albums.html">Albums</a></li>
-          <li><a href="pages/images.html">Images</a></li>
-        </ul>
+       <li id="galleryNav"><a  href="pages/images.html">Gallery</a></li>
+      <!--<li><a href="#">Gallery</a>-->
+        <!--<ul>-->
+          <!--<li><a href="pages/albums.html">Albums</a></li>-->
+          <!--<li><a href="pages/images.html">Images</a></li>-->
+        <!--</ul>-->
       </li>
 
       <li class="active"><a href="index.html">Home</a></li>
@@ -58,16 +59,17 @@ Licence URI: http://www.os-templates.com/template-terms
 </div>
 <div class="wrapper col3">
   <div id="gallery">
+      <div style="height:14px; margin:12px;text-align: center" id="homeTitle"></div>
     <ul>
-      <li class="placeholder" style="background-image:url('images/gallery/1.gif');">Image Holder</li>
-      <li><a class="swap" href="#"><img src="images/gallery/1_s.gif" alt="" /><span><img src="images/gallery/1.gif" width="950" height="370" alt="" /></span></a></li>
-      <li><a class="swap" href="#"><img src="images/gallery/2_s.gif" alt="" /><span><img src="images/gallery/2.gif" width="950" height="370" alt="" /></span></a></li>
-      <li><a class="swap" href="#"><img src="images/gallery/3_s.gif" alt="" /><span><img src="images/gallery/3.gif" width="950" height="370" alt="" /></span></a></li>
-      <li><a class="swap" href="#"><img src="images/gallery/4_s.gif" alt="" /><span><img src="images/gallery/4.gif" width="950" height="370" alt="" /></span></a></li>
-      <li class="last"><a class="swap" href="#"><img src="images/gallery/5_s.gif" alt="" /><span><img src="images/gallery/5.gif" width="950" height="370" alt="" /></span></a></li>
+        <li id="placeholder" class="placeholder" ><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class=" " src="" width="950" height="370" alt="" /></li>
+        <li id="first"><a class="swap" href="#"><img class="firstURL" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="firstURL" src="" width="950" height="370" alt="" /></span></a></li>
+        <li id="second"><a class="swap" href="#"><img class="secondURL" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="secondURL" src="" width="950" height="370" alt="" /></span></a></li>
+        <li id="third"><a class="swap" href="#"><img  class="thirdURL" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="thirdURL" src="" width="950" height="370" alt="" /></span></a></li>
+        <li id="fourth"><a class="swap" href="#"><img class="fourthURL" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="fourthURL" src="" width="950" height="370" alt="" /></span></a></li>
+        <li id="fifth" class="last"><a class="swap" href="#"><img class="fifthURL" src="" alt="" /><span><img style="margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;" class="fifthURL" src="" width="950" height="370" alt="" /></span></a></li>
     </ul>
   </div>
 </div>
-
+<!--style="background-size: contain;background-repeat:no-repeat; background-position: center;"-->
 </body>
 </html>
