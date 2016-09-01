@@ -38,17 +38,16 @@ window.addEventListener("load", function script() {
         if (window.location.href.indexOf("login") > -1 || window.location.href.indexOf("register") > -1) {
             window.location.href = "../index.html";
         }
-        if (window.location.href.indexOf("mygallery") > -1){
-            $('#registerNav').replaceWith("<li id='logoutClick' ><a href='mygallery.html'>My uploads</a></li>");
-        }else if (window.location.href.indexOf("images") > -1){
-            $('#registerNav').replaceWith("<li id='logoutClick' ><a href='mygallery.html'>My uploads</a></li>");
-        }else if (window.location.href.indexOf("bigger") > -1){
-            $('#registerNav').replaceWith("<li id='logoutClick' ><a href='mygallery.html'>My uploads</a></li>");
-        }else {
-            $('#registerNav').replaceWith("<li id='logoutClick' ><a href='pages/mygallery.html'>My uploads</a></li>");
+        if (window.location.href.indexOf("mygallery") > -1) {
+            $('#registerNav').replaceWith("<li id='myGall' ><a href='mygallery.html'>My uploads</a></li>");
+            $('#loginNav').replaceWith("<li id='logoutClick' ><a href='../index.html'>Log Out</a></li>");
+        } else if (window.location.href.indexOf("images") > -1) {
+            $('#registerNav').replaceWith("<li id='myGall' ><a href='mygallery.html'>My uploads</a></li>");
+            $('#loginNav').replaceWith("<li id='logoutClick' ><a href='../index.html'>Log Out</a></li>");
+        } else {
+            $('#registerNav').replaceWith("<li id='myGall' ><a href='pages/mygallery.html'>My uploads</a></li>");
+            $('#loginNav').replaceWith("<li id='logoutClick' ><a href='#'>Log Out</a></li>");
         }
-        $('#loginNav').replaceWith("<li id='logoutClick' ><a href='#'>Log Out</a></li>");
-
     }
 
     if (!authService.isLoggedIn()) {
@@ -74,7 +73,7 @@ window.addEventListener("load", function script() {
 
     $('#logoutClick').on('click', function () {
         sessionStorage.clear();
-        window.location.href = "index.html"; //will redirect to your blog page (an ex: blog.html)
+        window.location.href = "index.html";
     });
 
     $('#registerButton').on('click', function () {
@@ -87,7 +86,6 @@ window.addEventListener("load", function script() {
             password: password,
             confirmPassword: confirmPassword
         };
-
         register(data);
     });
 
@@ -119,7 +117,6 @@ window.addEventListener("load", function script() {
                     recentIMGs.push(data[i]);
                 }
 
-
                 $('.firstURL').on('click', function () {
                     $("#homeTitle").text(recentIMGs[0].title);
                 });
@@ -135,14 +132,12 @@ window.addEventListener("load", function script() {
                 $('.fifthURL').on('click', function () {
                     $("#homeTitle").text(recentIMGs[4].title);
                 });
-                // $('#placeholder').css("background-image",'url(' + recentIMGs[0].imgURL + ')');
                 $(".firstURL").attr("src", recentIMGs[0].imgURL);
                 $(".secondURL").attr("src", recentIMGs[1].imgURL);
                 $(".thirdURL").attr("src", recentIMGs[2].imgURL);
                 $(".fourthURL").attr("src", recentIMGs[3].imgURL);
                 $(".fifthURL").attr("src", recentIMGs[4].imgURL);
 
-                // $('#first').replaceWith( '<li><a class="swap" href="#"><img src="images/gallery/1_s.gif" alt="" /><span><img src="images/gallery/1.gif" width="950" height="370" alt="" /></span></a></li>' );
             },
             function error(data) {
                 showPopup('error', "Error loading images!");
@@ -166,7 +161,6 @@ window.addEventListener("load", function script() {
                     currentId++;
                     galleryIMGs.push(data[i]);
                 }
-
 
                 $('#one').on('click', function () {
                     $("#homeTitle").text(galleryIMGs[0].title);
@@ -198,7 +192,7 @@ window.addEventListener("load", function script() {
                 $('#ten').on('click', function () {
                     $("#homeTitle").text(galleryIMGs[9].title);
                 });
-                // $('#placeholder').css("background-image",'url(' + recentIMGs[0].imgURL + ')');
+
                 $(".one").attr("src", galleryIMGs[0].imgURL);
                 $(".two").attr("src", galleryIMGs[1].imgURL);
                 $(".three").attr("src", galleryIMGs[2].imgURL);
@@ -210,9 +204,19 @@ window.addEventListener("load", function script() {
                 $(".nine").attr("src", galleryIMGs[8].imgURL);
                 $(".ten").attr("src", galleryIMGs[9].imgURL);
 
-                galleryCounter = galleryCounter + 10;
 
-                // $('#first').replaceWith( '<li><a class="swap" href="#"><img src="images/gallery/1_s.gif" alt="" /><span><img src="images/gallery/1.gif" width="950" height="370" alt="" /></span></a></li>' );
+                $("#one").attr("href", galleryIMGs[0].imgURL);
+                $("#two").attr("href", galleryIMGs[1].imgURL);
+                $("#three").attr("href", galleryIMGs[2].imgURL);
+                $("#four").attr("href", galleryIMGs[3].imgURL);
+                $("#five").attr("href", galleryIMGs[4].imgURL);
+                $("#six").attr("href", galleryIMGs[5].imgURL);
+                $("#seven").attr("href", galleryIMGs[6].imgURL);
+                $("#eight").attr("href", galleryIMGs[7].imgURL);
+                $("#nine").attr("href", galleryIMGs[8].imgURL);
+                $("#ten").attr("href", galleryIMGs[9].imgURL);
+
+                galleryCounter = galleryCounter + 10;
             },
             function error(data) {
                 showPopup('error', "Error loading images!");
@@ -239,22 +243,21 @@ window.addEventListener("load", function script() {
                     galleryAdd.push(data[i]);
                 }
                 for (let i = 0; i < 5; i++) {
-                    if(galleryAdd[i] == undefined ){break}
-                    if(i==4){
-                        $("#imgList").append('<li class="last"><a class="swap" href="#"><img class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
-                        let idHelper = "bonus" + galleryCounter + i;
-                        $("." + idHelper).attr("src", galleryAdd[i].imgURL);
-                    }else {
-
-                        $("#imgList").append('<li><a class="swap" href="#"><img class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
-                        let idHelper = "bonus" + galleryCounter + i;
-                        $("." + idHelper).attr("src", galleryAdd[i].imgURL);
-                        console.log(galleryAdd[i].imgURL);
-                        console.log(galleryAdd[i].imgURL.length);
+                    if (galleryAdd[i] == undefined) {
+                        break
                     }
+                    if (i == 4) {
+                        $("#imgList").append('<li class="last"><a class="swap" href="' + galleryAdd[i].imgURL + '"><img class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
+                        let idHelper = "bonus" + galleryCounter + i;
+                        $("." + idHelper).attr("src", galleryAdd[i].imgURL);
+                    } else {
 
+                        $("#imgList").append('<li><a class="swap" href="' + galleryAdd[i].imgURL + '"><img class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
+                        let idHelper = "bonus" + galleryCounter + i;
+                        $("." + idHelper).attr("src", galleryAdd[i].imgURL);
+                    }
                 }
-                 galleryCounter = galleryCounter + 5;
+                galleryCounter = galleryCounter + 5;
             });
 
     });
@@ -270,60 +273,33 @@ window.addEventListener("load", function script() {
                 });
                 let currentId = 1;
 
-                for (let i = 0; i < data.length && i < 5; i++) {
-                    if(data[i].uploader==sessionStorage.username){
-                    data[i].postId = currentId;
-                    currentId++;
-                    galleryIMGs.push(data[i]);}
-
+                for (let i = 0; i < data.length || i < 5; i++) {
+                    if (data[i].uploader == sessionStorage.username) {
+                        data[i].postId = currentId;
+                        currentId++;
+                        galleryIMGs.push(data[i]);
+                    }
                 }
 
-
-                $('#one').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[0].title);
-                });
-                $('#two').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[1].title);
-                });
-                $('#three').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[2].title);
-                });
-                $('#four').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[3].title);
-                });
-                $('#five').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[4].title);
-                });
-                $('#six').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[5].title);
-                });
-                $('#seven').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[6].title);
-                });
-                $('#eight').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[7].title);
-                });
-                $('#nine').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[8].title);
-                });
-                $('#ten').on('click', function () {
-                    $("#homeTitle").text(galleryIMGs[9].title);
-                });
-                // $('#placeholder').css("background-image",'url(' + recentIMGs[0].imgURL + ')');
-                $(".one").attr("src", galleryIMGs[0].imgURL);
-                $(".two").attr("src", galleryIMGs[1].imgURL);
-                $(".three").attr("src", galleryIMGs[2].imgURL);
-                $(".four").attr("src", galleryIMGs[3].imgURL);
-                $(".five").attr("src", galleryIMGs[4].imgURL);
-                $(".six").attr("src", galleryIMGs[5].imgURL);
-                $(".seven").attr("src", galleryIMGs[6].imgURL);
-                $(".eight").attr("src", galleryIMGs[7].imgURL);
-                $(".nine").attr("src", galleryIMGs[8].imgURL);
-                $(".ten").attr("src", galleryIMGs[9].imgURL);
-
-                galleryCounter = galleryCounter + 10;
-
-                // $('#first').replaceWith( '<li><a class="swap" href="#"><img src="images/gallery/1_s.gif" alt="" /><span><img src="images/gallery/1.gif" width="950" height="370" alt="" /></span></a></li>' );
+                for (let i = 0; i < 5 || i < galleryIMGs.length; i++) {
+                    if (galleryIMGs[i] == undefined) {
+                        break
+                    }
+                    if ((i - 4) % 5 == 0) {
+                        $("#imgList").append('<li class="last"><a class="swap" href="' + galleryIMGs[i].imgURL + '"><img class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
+                        let idHelper = "bonus" + galleryCounter + i;
+                        $("." + idHelper).attr("src", galleryIMGs[i].imgURL);
+                    } else {
+                        let objHelper = JSON.stringify(galleryIMGs[i]);
+                        $("#imgList").append('<li><a class="galls" href="' + galleryIMGs[i].imgURL + '"><img  class="bonus' + galleryCounter + i + ' " src="" alt="" /></a></li>');
+                        let idHelper = "bonus" + galleryCounter + i;
+                        // $("." + idHelper).attr("onclick","bigger(galleryIMGs[i])");
+                        // $("." + idHelper).on('click', function() {
+                        //     bigger(galleryIMGs[i])
+                        // });
+                        $("." + idHelper).attr("src", galleryIMGs[i].imgURL);
+                    }
+                }
             },
             function error(data) {
                 showPopup('error', "Error loading images!");
@@ -331,16 +307,27 @@ window.addEventListener("load", function script() {
         );
     }
 
+    // function bigger(data) {
+    //     sessionStorage.URLs = data.imgURL;
+    //     one();
+    //     function one (){
+    //         window.location.href = "bigger.html"
+    //         two();
+    //         function two (){
+    //             alert(sessionStorage.URLs);
+    //         }
+    //     }
+    //
+    //         $("#biggerIMG").attr("src", sessionStorage.URLs);
+    //
+    // }
+
     function login(data) {
         let requestUrl = baseServiceUrl + "login";
 
         requester.post(requestUrl, data,
             function success(response) {
-                showPopup('success', "An error has occu- j/k, you're logged in. :V");
-
-                //sessionStorage['_authToken'] = data._kmd._authToken;
-                //sessionStorage['username'] = data.username;
-                //sessionStorage['password'] = data.password;
+                showPopup('success', "You logged in super hard.");
 
                 sessionStorage.setItem('username', response.username);
                 sessionStorage.setItem('_authToken', response._kmd.authtoken);
@@ -348,28 +335,28 @@ window.addEventListener("load", function script() {
                 sessionStorage.setItem('URLs', response.URLs);
 
                 setTimeout(function () {
-                    window.location.href = "../index.html"; //will redirect to your blog page (an ex: blog.html)
+                    window.location.href = "../index.html";
                 }, 2000);
             },
             function error(response) {
-                showPopup('error', "Tried to log in. Got slapped in the face. I blame you.");
+                showPopup('error', "Login Error: Bears attacked the server!");
             });
     }
 
 
     function register(requestData) {
         if (requestData.username.length < 5) {
-            showPopup('error', "Username must be at least 5 characters, Mr. Person.");
+            showPopup('error', "Username must be at least 5 characters.");
             return;
         }
 
         if (requestData.password.length < 6) {
-            showPopup('error', "'And the Lord said: ...and the one whose password is under 6 symbols is a sinner!");
+            showPopup('error', "Password must be at least 6 letters.");
             return;
         }
 
         if (requestData.password !== requestData.confirmPassword) {
-            showPopup('error', "Wow, did you just mess up the password you wrote 2 seconds ago?");
+            showPopup('error', "Retype the same password please, gosh.");
             return;
         }
 
@@ -378,9 +365,9 @@ window.addEventListener("load", function script() {
 
         requester.post(baseServiceUrl, requestData,
             function success(data) {
-                showPopup('success', "You did it! You're like, super registered right now!");
+                showPopup('success', "You registered like a boss.");
                 setTimeout(function () {
-                    window.location.href = "login.html"; //will redirect to your blog page (an ex: blog.html)
+                    window.location.href = "login.html";
                 }, 3000);
             },
             function error(data) {
@@ -407,7 +394,7 @@ window.addEventListener("load", function script() {
                         function success(data) {
                             showPopup('success', "uploaded");
                             setTimeout(function () {
-                                window.location.href = "login.html"; //will redirect to your blog page (an ex: blog.html)
+                                window.location.href = "login.html";
                             }, 3000);
                         },
                         function error(data) {

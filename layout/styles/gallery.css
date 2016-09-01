@@ -21,4 +21,14 @@ a.swap:hover{white-space:normal;}
 a.swap:link span, a.swap:visited span, a.swap:active span{visibility:hidden; position: absolute; top:73px; left:5px; width:950px; height:370px;}
 a.swap:active span, span, a.swap:focus span{visibility:visible;}
 a.swap:active img, a.swap:focus img{position:relative; z-index:50;}
+
+
+#gallery a.galls:link, #gallery a.galls:visited, #gallery a.galls:hover{display:block; width:174px; height:100px; margin:0; padding:4px; text-align:center; border:1px solid #666666;}
+#gallery a.galls img{width:174px; height:100px;}
+#gallery a.galls span img{width:950px; height:370px;}
+a.gallsgalls:hover{white-space:normal;}
+a.galls:link span, a.galls:visited span, a.galls:active span{visibility:hidden; position: absolute; top:73px; left:5px; width:950px; height:370px;}
+a.galls:active span, span, a.galls:focus span{visibility:visible;}
+a.galls:active img, a.galls:focus img{position:relative; z-index:50;}
+
 /*.firstURL .secondURL .thirdURL .fourthURL .fifthURL{margin:0 auto;display: block; max-width: 950px;max-height: 370px;width: auto;height: auto;}*/

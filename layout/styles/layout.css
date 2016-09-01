@@ -42,7 +42,6 @@ div.wrapper{display:block; width:100%; margin:0; text-align:left;}
 div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0 0 20px 0; padding:0 0 8px 0; font-size:22px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif; border-bottom:1px dashed #DDDDDD;}
 .col1{color:#333333; background-color:#000000;}
 .col2{color:#DBDBDB; background-color:#000000; border-bottom:1px solid #3B3B3B;}
-.col3{color:#DBDBDB; background-color:#000000; border-bottom:1px solid #3B3B3B;}
 .col4{color:#DBDBDB; background-color:#000000; border-bottom:1px solid #3B3B3B;}
 .col5{color:#CCCCCC; background-color:#000000; border-bottom:1px solid #3B3B3B;}
 .col5 a{color:#99CC00; background-color:#000000;}
@@ -137,20 +136,34 @@ div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, 
 #regRedirectLink {text-decoration: none; color:white;}
 #regRedirectLink a:visited {color:white;}
 
-/* Company Details */
 
-#compdetails{display:block; float:right; width:550px;}
-#compdetails ul{margin:0; padding:0; list-style:none;}
-#compdetails li{margin:0 0 12px 0;}
-#compdetails li.last{margin:0;}
-#officialdetails{float:left}
-#officialdetails li.last{margin-bottom:20px;}
-#contactdetails{float:right}
+#loadButton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    color: black;
+}
 
-/* ----------------------------------------------Copyright------------------------------------- */
+.delButton{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #e7e7e7;
+    color: black;
+}
 
-#copyright{padding:20px 0;}
-#copyright p{display:block; float:right; text-align:right; margin:0; padding:0; width:200px;}
-#copyright ul{display:block; float:left; margin:0; padding:0; width:700px;}
-#copyright li{display:inline; margin-right:8px; padding-right:10px; border-right:1px solid #CCCCCC;}
-#copyright li.last{margin-right:0; padding-right:0; border-right:none;}
